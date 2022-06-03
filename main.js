@@ -1,8 +1,10 @@
 // Connection Check!
 console.log("https://api.github.com/users/mintelc12")
 
-const profilePage = document.querySelector("#profile-page")
+const repoSection = document.querySelector("#repo-section")
+const profileSection = document.querySelector("#profile-section")
 
+// fetching profile information
 let githubUrl = "https://api.github.com/users/mintelc12"
 fetch(githubUrl, {
     method: "GET",
@@ -16,10 +18,29 @@ fetch(githubUrl, {
     .then(function (data){
         // data refers to what the above promise returned (reponse.json())
         console.log("Response from GitHub API: ", data.name)
+
+        // Profile Name
+        let nameElement = document.createElement("h3")
+        nameElement.classList.add("header")
+        nameElement.innerText = data.name
+        profileSection.appendChild(nameElement)
+
+        // Profile Picture
+        let imageElement = document.createElement("img")
+        imageElement.classList.add("header")
+        imageElement.src = data.avatar_url
+        profileSection.appendChild(imageElement)
+
+        let locationElement = document.createElement("div")
+        locationElement.classList.add("header")
+        locationElement.innerText = data.location
+        profileSection.appendChild(locationElement)
         // console log the data
         // buildProfile(data)
     })
 
+
+    // fetching repos
 let githubRepoUrl = "https://api.github.com/users/mintelc12/repos"
 fetch(githubRepoUrl, {
     method: "GET",
@@ -36,39 +57,33 @@ fetch(githubRepoUrl, {
     function buildRepos(repoData) {
         let names = []
         for (let repo of repoData) {
+            buildRepoElement(repo)
             names.push(repo.name)
-        } 
+        }} 
+
+function buildRepoElement(repo) {
+    let el = document.createElement("a")
+    el.href = repo.html_url
+    el.innerText = repo.name 
+    repoSection.appendChild(el)
+    return el
+}
+
+
+// returns a new element for a repo, like a customer
+
         // equivalent to below:
         // repoData.map(function (repo) {
         //     return repo.name
         
-        console.log("names", names)
-        elements = names.map(function (name){
-            return buildRepoElement(name)
-        })
-        console.log("elements", elements)
-        for (let element of elements) {
-            profilePage.appendChild(element)
-        }}
+        // console.log("names", names)
+        // elements = names.map(function (name){
+        //     return buildRepoElement(name)
+        // })
+        // console.log("elements", elements)
+        // for (let element of elements) {
+        //     repoSection.appendChild(element)
+        // }}
 //         // create elements and add them to the page. 
 //         // profileData is data from the promise
-//     }
-
-function buildRepoElement(name) {
-    let el = document.createElement("p")
-    el.innerText = name 
-    return el
-}
-
-// returns a new element for a repo, like a customer
-
-let nameElement = document.createElement("h3")
-nameElement.classList.add("center")
-nameElement.innerText = `${githubUrl.name}`
-profilePage.appendChild(nameElement)
-
-// let pictureElement = document.createElement("img")
-//     pictureElement.alt = "Chloe Mintel pic"
-//     pictureElement.classList.add("git")
-//     pictureElement.src = "https://avatars.githubusercontent.com/u/105135531?v=4"
-//     pictureElement.appendChild(profilePage)
+//   
