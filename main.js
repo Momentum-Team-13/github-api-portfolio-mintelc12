@@ -31,9 +31,23 @@ fetch(githubUrl, {
         imageElement.src = data.avatar_url
         profileSection.appendChild(imageElement)
 
-        let locationElement = document.createElement("div")
-        locationElement.classList.add("header")
-        locationElement.innerText = data.location
+        // Username
+        let usernameElement = document.createElement("a")
+        usernameElement.classList.add("username")
+        usernameElement.href = data.html_url
+        usernameElement.innerText = `GitHub Username: ${data.login}`
+        profileSection.appendChild(usernameElement)
+
+        // Bio
+        let bioElement = document.createElement("bio")
+        bioElement.classList.add("biostuff")
+        bioElement.innerText = `Bio: ${data.bio}`
+        profileSection.appendChild(bioElement)
+
+        // My Location
+        let locationElement = document.createElement("profile")
+        locationElement.classList.add("location")
+        locationElement.innerText = `Location: ${data.location}`
         profileSection.appendChild(locationElement)
         // console log the data
         // buildProfile(data)

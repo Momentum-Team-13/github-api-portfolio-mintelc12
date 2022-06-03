@@ -2,41 +2,81 @@
 
 } */
 #profile-section {
-    border: 5px solid goldenrod;
+    border: 5px solid #76E7CD;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: space-between;
+    background: url(background.webp);
+    background-size: cover;
+    font-size: large; 
+    padding: 10px;
+    /* display: flex;  */
+    color:rgb(92, 20, 104)
     
 }
 
 #repo-section {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border:#832161 solid 2px;
+    background: #9B7EDE;
+    color: rgb(92, 20, 104);
+    font-size: 20px; 
+    text-align: center;
 }
 a {
-    border: 1px solid rgb(206, 206, 206);
-    padding: 5px;
+    background-color: rgba(188, 210, 238, .6);
+    box-shadow: 2px 2px rgb(255, 255, 255);
+    padding: 10px;
     margin: 5px;
     display: flex; 
     text-decoration: none;
+    border-radius: 50px;
+
 }
 
 a:link {
-    color: #6b147b
+    color: #832161
 }
+
+a:hover {
+    color: rgb(59, 122, 230);
+}
+
 
 h3 {
-    padding: 5px;
+    text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 50px;
+    font-size: 60px;
+    background:rgba(92, 20, 104, .2);
+    border-radius: 50px;
+    border: 5px teal;
+    margin: 5px;
 }
 
-div {
+.profile {
     border: 2px solid rgb(39, 138, 188);
     text-align: center;
 }
 
 img {
     border-radius: 50%;
-    max-width: 200px;
-    padding: 20px;
+    max-width: 40%;
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid rgb(214, 127, 127); 
+
 }
 
+.biostuff {
+    background: white;
+    margin: 5px;
+    font-size: large;
+
+
+}
+.location {
+    background: white;
+    margin: 5px;
+    font-size: large;
+}
