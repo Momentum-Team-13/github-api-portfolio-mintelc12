@@ -41,16 +41,14 @@ fetch(githubUrl, {
         // Bio
         let bioElement = document.createElement("bio")
         bioElement.classList.add("biostuff")
-        bioElement.innerText = `Bio: ${data.bio}`
+        bioElement.innerText = `${data.bio}`
         profileSection.appendChild(bioElement)
 
         // My Location
         let locationElement = document.createElement("profile")
         locationElement.classList.add("location")
-        locationElement.innerText = `Location: ${data.location}`
+        locationElement.innerText = `\nLocation: ${data.location}`
         profileSection.appendChild(locationElement)
-        // console log the data
-        // buildProfile(data)
     })
 
 
@@ -82,22 +80,3 @@ function buildRepoElement(repo) {
     repoSection.appendChild(el)
     return el
 }
-
-
-// returns a new element for a repo, like a customer
-
-        // equivalent to below:
-        // repoData.map(function (repo) {
-        //     return repo.name
-        
-        // console.log("names", names)
-        // elements = names.map(function (name){
-        //     return buildRepoElement(name)
-        // })
-        // console.log("elements", elements)
-        // for (let element of elements) {
-        //     repoSection.appendChild(element)
-        // }}
-//         // create elements and add them to the page. 
-//         // profileData is data from the promise
-//   

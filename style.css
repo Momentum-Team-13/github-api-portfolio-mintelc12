@@ -10,26 +10,29 @@
     font-size: large; 
     padding: 10px;
     /* display: flex;  */
-    color:rgb(92, 20, 104)
+    color:rgb(238, 144, 144)
     
 }
 
 #repo-section {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border:#832161 solid 2px;
-    background: #9B7EDE;
-    color: rgb(92, 20, 104);
-    font-size: 20px; 
+    border:#76E7CD solid 5px;
+    background: url(purple-textured-background.jpeg);
+    background-size: cover;
+    color: rgb(238, 144, 144);
+    font-size: 30px; 
     text-align: center;
+    padding: 20px; 
 }
 a {
-    background-color: rgba(188, 210, 238, .6);
-    box-shadow: 2px 2px rgb(255, 255, 255);
+    background-color: rgba(188, 210, 238, .55);
+    box-shadow: 4px 4px 8px rgb(255, 255, 255);
     padding: 10px;
     margin: 5px;
     display: flex; 
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 45px;
+    color: #832161;
 
 }
 
@@ -38,7 +41,8 @@ a:link {
 }
 
 a:hover {
-    color: rgb(59, 122, 230);
+    color: rgb(255, 255, 255);
+    transition: .35s
 }
 
 
@@ -46,7 +50,7 @@ h3 {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 60px;
-    background:rgba(92, 20, 104, .2);
+    background:rgba(92, 20, 104, .7);
     border-radius: 50px;
     border: 5px teal;
     margin: 5px;
@@ -71,12 +75,17 @@ img {
 .biostuff {
     background: white;
     margin: 5px;
-    font-size: large;
+    font-size: 30px;
+    text-align: center;
 
 
 }
 .location {
     background: white;
     margin: 5px;
-    font-size: large;
+    font-size: 20px;
+}
+.username {
+    margin: 5px;
+    font-size: 30px;
 }
